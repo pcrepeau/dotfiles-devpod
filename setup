@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Setup XDG_CONFIG_HOME
+export XDG_CONFIG_HOME="$HOME"/.config
+mkdir -p "$XDG_CONFIG_HOME"
+
+
+# Create symlilnks for existing configurations
+ln -sf "$PWD/nvim" "XDG_CONFIG_HOME"/nvim
+ln -sf "$PWD/.inputrc" "$HOME"/.inputrc
+ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
+
+
+# Fetch and setup Zsh configuratio files from my main dotfiles repo
+
+
+curl -o "$HOME/.zshrc https://raw.githubusercontent.com/pcrepeau/dotfiles/main/dot_zshrc"
+
+packages=(
+  fd
+  ripgrep
+  npm
+  lazygit
+  fzf
+  kubectl
+  fluxcd/tap/flux
+  k9s
+  direnv
+)
+
+# Iterate over the array and install each package
+for package in "${packages[@]}""; do
+  echo "Installing $package..."
+  /home/linuxbrew/.linuxbrew/bin/brew install "$package"
+done
+
+echo "All packages have been installed."
+
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+
+touch "$HOME/.privaterc"
+
