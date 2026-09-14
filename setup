@@ -13,7 +13,7 @@ mkdir -p "$XDG_CONFIG_HOME"
 
 # Fetch and setup Zsh configuratio files from my main dotfiles repo
 
-#brew trust fluxcd/tap
+brew trust fluxcd/tap
 wget -O $HOME/.zshrc https://raw.githubusercontent.com/pcrepeau/dotfiles/main/dot_zshrc
 
 packages=(
