@@ -34,7 +34,6 @@ packages=(
 for package in "${packages[@]}"; do
   echo "Installing $package..."
   /home/linuxbrew/.linuxbrew/bin/brew install "$package"
-doneghcr.io/stu-bell/devcontainer-features/homebrew
 
 echo "All packages have been installed."
 
