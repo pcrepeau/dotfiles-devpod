@@ -13,7 +13,7 @@ mkdir -p "$XDG_CONFIG_HOME"
 
 # Fetch and setup Zsh configuratio files from my main dotfiles repo
 
-
+brew trust fluxcd/tap 
 curl -o "$HOME/.zshrc https://raw.githubusercontent.com/pcrepeau/dotfiles/main/dot_zshrc"
 
 packages=(
@@ -26,13 +26,15 @@ packages=(
   fluxcd/tap/flux
   derailed/k9s/k9s
   direnv
+  neovim
+  vim
 )
 
 # Iterate over the array and install each package
 for package in "${packages[@]}"; do
   echo "Installing $package..."
   /home/linuxbrew/.linuxbrew/bin/brew install "$package"
-done
+doneghcr.io/stu-bell/devcontainer-features/homebrew
 
 echo "All packages have been installed."
 
