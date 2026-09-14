@@ -16,6 +16,7 @@ curl -o "$HOME/.zshrc https://raw.githubusercontent.com/pcrepeau/dotfiles/main/d
 sudo apt update
 sudo apt install fd ripgrep npm lazygit fzf kubectl k9s direnv curl
 curl -s https://fluxcd.io/install.sh | sudo bash
+flux completion bash | sudo tee /etc/bash_completion.d/flux >/dev/null
 
 # Iterate over the array and install each package
 
