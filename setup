@@ -30,6 +30,8 @@ packages=(
   direnv
   neovim
   vim
+  lsd
+  bat
 )
 
 # Iterate over the array and install each package
