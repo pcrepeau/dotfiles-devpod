@@ -43,3 +43,4 @@ echo "All packages have been installed."
 mkdir -p "$HOME/.zsh"
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 touch "$HOME/.privaterc"
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc && source ~/.zshrc
