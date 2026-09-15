@@ -6,15 +6,17 @@ mkdir -p "$XDG_CONFIG_HOME"
 
 
 # Create symlilnks for existing configurations
-#ln -sf "$PWD/nvim" "XDG_CONFIG_HOME"/nvim
-#ln -sf "$PWD/.inputrc" "$HOME"/.inputrc
-#ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
+ln -sf "$PWD/nvim" "XDG_CONFIG_HOME"/nvim
+ln -sf "$PWD/.inputrc" "$HOME"/.inputrc
+ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 
 
 # Fetch and setup Zsh configuratio files from my main dotfiles repo
 
+
 brew trust fluxcd/tap
 wget -O $HOME/.zshrc https://raw.githubusercontent.com/pcrepeau/dotfiles/main/dot_zshrc
+
 
 packages=(
   fd
@@ -31,9 +33,10 @@ packages=(
 )
 
 # Iterate over the array and install each package
-for package in "${packages[@]}"; do
+for package in "${packages[@]}""; do
   echo "Installing $package..."
   /home/linuxbrew/.linuxbrew/bin/brew install "$package"
+done
 
 echo "All packages have been installed."
 
