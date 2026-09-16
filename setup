@@ -10,13 +10,10 @@ ln -sf "$PWD/nvim" "XDG_CONFIG_HOME"/nvim
 ln -sf "$PWD/.inputrc" "$HOME"/.inputrc
 ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 
-
 # Fetch and setup Zsh configuratio files from my main dotfiles repo
-
 
 brew trust fluxcd/tap
 wget -O $HOME/.zshrc https://raw.githubusercontent.com/pcrepeau/dotfiles/main/dot_zshrc
-
 
 packages=(
   fd
@@ -32,6 +29,7 @@ packages=(
   vim
   lsd
   bat
+  kubectx
 )
 
 # Iterate over the array and install each package
@@ -46,4 +44,3 @@ mkdir -p "$HOME/.zsh"
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 touch "$HOME/.privaterc"
-echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc && source ~/.zshrc
