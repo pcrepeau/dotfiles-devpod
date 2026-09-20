@@ -32,6 +32,7 @@ packages=(
   kubectx
   sops
   age
+  gnupg
 )
 
 # Iterate over the array and install each package
