@@ -30,6 +30,8 @@ packages=(
   lsd
   bat
   kubectx
+  sops
+  age
 )
 
 # Iterate over the array and install each package
