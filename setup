@@ -16,6 +16,7 @@ ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 
 brew trust fluxcd/tap
 wget -O $HOME/.zshrc https://raw.githubusercontent.com/pcrepeau/dotfiles/main/dot_zshrc
+wget -O $HOME/.config/nvim/ https://raw.githubusercontent.com/pcrepeau/dotfiles/main/dot_config/nvim/
 sudo apt-get install helm --yes
 
 packages=(
