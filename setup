@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -euo pipefail
-
 # Setup XDG_CONFIG_HOME
 export XDG_CONFIG_HOME="$HOME"/.config
 mkdir -p "$XDG_CONFIG_HOME"
@@ -16,7 +14,6 @@ ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 
 brew trust fluxcd/tap
 wget -O $HOME/.zshrc https://raw.githubusercontent.com/pcrepeau/dotfiles/main/dot_zshrc
-wget -O $HOME/.config/nvim/ https://raw.githubusercontent.com/pcrepeau/dotfiles/main/dot_config/nvim/
 sudo apt-get install helm --yes
 
 packages=(
@@ -49,6 +46,6 @@ echo "All packages have been installed."
 
 mkdir -p "$HOME/.zsh"
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-#git clone https://github.com/LazyVim/starter ~/.config/nvim
+git clone https://github.com/LazyVim/starter ~/.config/nvim
 touch "$HOME/.privaterc"
 echo 'eval "$(direnv hook zsh)"' >>~/.zshrc && source ~/.zshrc
