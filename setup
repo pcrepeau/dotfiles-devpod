@@ -15,7 +15,6 @@ ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 # Fetch and setup Zsh configuratio files from my main dotfiles repo
 
 brew trust fluxcd/tap
-wget -O $HOME/.zshrc https://raw.githubusercontent.com/pcrepeau/dotfiles/main/dot_zshrc
 sudo apt-get install helm --yes
 
 packages=(
