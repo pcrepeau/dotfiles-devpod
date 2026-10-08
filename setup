@@ -14,36 +14,36 @@ ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 
 # Fetch and setup Zsh configuratio files from my main dotfiles repo
 
-brew trust fluxcd/tap
+#brew trust fluxcd/tap
 sudo apt-get install helm --yes
 
-packages=(
-  fd
-  ripgrep
-  npm
-  lazygit
-  fzf
-  kubectl
-  fluxcd/tap/flux
-  derailed/k9s/k9s
-  direnv
-  neovim
-  vim
-  lsd
-  bat
-  kubectx
-  sops
-  age
-  gnupg
-)
+#packages=(
+#  fd
+#  ripgrep
+#  npm
+#  lazygit
+#  fzf
+#  kubectl
+#  fluxcd/tap/flux
+#  derailed/k9s/k9s
+#  direnv
+#  neovim
+#  vim
+#  lsd
+#  bat
+#  kubectx
+#  sops
+#  age
+#  gnupg
+#)
 
 # Iterate over the array and install each package
-for package in "${packages[@]}"; do
-  echo "Installing $package..."
-  /home/linuxbrew/.linuxbrew/bin/brew install "$package"
-done
+#for package in "${packages[@]}"; do
+#  echo "Installing $package..."
+#  /home/linuxbrew/.linuxbrew/bin/brew install "$package"
+#done
 
-echo "All packages have been installed."
+#echo "All packages have been installed."
 
 if command -v zsh >/dev/null; then
   sudo chsh -s $(command -v zsh) $USER
